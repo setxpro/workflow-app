@@ -5,12 +5,11 @@ import { ThemeProvider } from "styled-components";
 import { ToastContainer } from "react-toastify";
 
 const App = () => {
-
   const { theme } = useTheme()
   return (
     <ThemeProvider theme={theme}>
       <AppRoutes/>
-      <ToastContainer/>
+        <ToastContainer/>
       <GlobalStyle/>
     </ThemeProvider>
   );

@@ -5,7 +5,6 @@ import { AuthContext } from '../../contexts/auth';
 const Home = () => {
 
   const { user } = useContext(AuthContext)
-  console.log("Hello World!")
   return (
     <C.Container>
       <C.ContentArea>

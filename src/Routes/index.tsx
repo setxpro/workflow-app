@@ -26,6 +26,7 @@ const AppRoutes: React.FC = () => {
         <Route path='/' element={<LockRouter><Layout><Home/></Layout></LockRouter>}/>
         <Route path='/bi' element={<LockRouter><Layout><BI/></Layout></LockRouter>}/>
         <Route path='/bi/edit/:id' element={<LockRouter><Layout><EditBi/></Layout></LockRouter>}/>
+        <Route path='/forget-pass' element={<div><h1>Esqueci minha senha....</h1></div>}/>
     </Routes>
   );
 }
