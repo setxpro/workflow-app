@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 const App = () => {
 
   const { theme } = useTheme()
+  console.log("Hello World!")
   return (
     <ThemeProvider theme={theme}>
       <AppRoutes/>
