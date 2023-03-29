@@ -8,6 +8,7 @@ import Signin from '../pages/auth/signIn';
 import Layout from '../components/Layout';
 import BI from '../pages/BI';
 import EditBi from '../pages/BI/EditBi';
+import PageNotFound from '../pages/PageNotFound';
 
 const LockRouter = ( { children } : ChildrenJSX) => {
 
@@ -27,6 +28,7 @@ const AppRoutes: React.FC = () => {
         <Route path='/bi' element={<LockRouter><Layout><BI/></Layout></LockRouter>}/>
         <Route path='/bi/edit/:id' element={<LockRouter><Layout><EditBi/></Layout></LockRouter>}/>
         <Route path='/forget-pass' element={<div><h1>Esqueci minha senha....</h1></div>}/>
+        <Route path='*' element={<PageNotFound/>}/>
     </Routes>
   );
 }
