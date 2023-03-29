@@ -42,10 +42,8 @@ const EditBi: React.FC = () => {
       const { data } = await axios.patch(`${import.meta.env.VITE_APP_TALK}/bi/update-one/${id}`, {
         members,
        })
-   
        toast.success(data.message)
        navigate('/bi')
-       window.location.reload()
        return data;
     } catch (error:any) {
       toast.error(error.response.data.message)
