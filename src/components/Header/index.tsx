@@ -1,7 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import * as C from "./styles";
-import axios from "axios";
-import { useTheme } from "../../hooks/useTheme";
 import { AuthContext } from "../../contexts/auth";
 import { avatarTemporary } from "../../utils/avatar";
 import { useSidebar } from "../../hooks/useSidebar";
@@ -26,7 +24,7 @@ const Header = () => {
     }
 
     // count items on arry database
-    setCountData(10)
+    setCountData(0)
    
   }, [user?._id]);
 

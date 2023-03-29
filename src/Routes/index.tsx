@@ -7,7 +7,6 @@ import { AuthContext } from '../contexts/auth';
 import Signin from '../pages/auth/signIn';
 import Layout from '../components/Layout';
 import BI from '../pages/BI';
-import RegisterBi from '../pages/BI/RegisterBi';
 import EditBi from '../pages/BI/EditBi';
 
 const LockRouter = ( { children } : ChildrenJSX) => {

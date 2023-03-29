@@ -5,6 +5,7 @@ import * as C from "./styles";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/auth";
+import Lock from "../../../components/Loadings/Lock";
 
 const Signin: React.FC = () => {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ const Signin: React.FC = () => {
           />
         </C.ContentFormTop>
         {loading ? (
-          <p>Loading...</p>
+          <Lock/>
         ) : (
           <React.Fragment>
             <C.ContentFormMiddle>

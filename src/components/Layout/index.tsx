@@ -13,9 +13,7 @@ const Layout = ({ children }: ChildrenNode) => {
         <Sidebar />
         <Template>
           <Header />
-          {/* <AprovedExpenseProvider> */}
           <C.ContentPages>{children}</C.ContentPages>
-          {/* </AprovedExpenseProvider> */}
           <SideRightSettings/>
         </Template>
       </WrapperSidebarProvider>
