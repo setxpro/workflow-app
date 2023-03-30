@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "npx http-server ./dist",
+    "start": "npm run prod",
+    "prod": "npm run build && npx http-server ./dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
