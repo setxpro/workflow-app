@@ -7,32 +7,36 @@ import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../../contexts/auth";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function EditUser() {
+export default function UpdateUser() {
   const [name, setName] = React.useState("");
   const [middleName, setMiddlename] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [assignments, setAssignments] = React.useState("");
+  const [role, setRole] = React.useState("");
 
+  const { id } = useParams();
   const navigate = useNavigate();
-  
-  const { user } = React.useContext(AuthContext)
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
     try {
-        const { data } = await axios.patch(`${import.meta.env.VITE_APP_TALK}/user/update-user/${user?._id}`, {
+        const { data } = await axios.patch(`${import.meta.env.VITE_APP_TALK}/user/update/${id}`, {
             name,
             middleName,
             email,
             phone,
             assignments,
+            role
         })
         toast.success(data.message)
         setName("")
@@ -40,6 +44,7 @@ export default function EditUser() {
         setEmail("")
         setPhone("")
         setAssignments("")
+        setRole("")
         navigate(-1)
         return data;
     } catch (error: any) {
@@ -51,27 +56,26 @@ export default function EditUser() {
   React.useEffect(() => {
 
     (async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_APP_TALK}/user/find-one/${user?._id}`, {
-          headers: { Authorization: 'Bearer ' + user?.token }
-        });
+        const { data } = await axios.get(`${import.meta.env.VITE_APP_TALK}/user/find-one/${id}`);
         setName(data.user.name)
         setMiddlename(data.user.middleName)
         setEmail(data.user.email)
         setPhone(data.user.phone)
         setAssignments(data.user.name)
+        setRole(data.user.role)
     })()
 
-  }, [user?._id])
+  }, [id])
 
   return (
-    <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+    <Container component="main" maxWidth="sm" sx={{ mb: 4}}>
       <Paper
         variant="outlined"
         sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
       >
         <React.Fragment>
           <Typography variant="h6" gutterBottom>
-            Atualizar usuário
+            Atualizar Usuário
           </Typography>
             <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
@@ -133,9 +137,28 @@ export default function EditUser() {
                 onChange={(e) => setPhone(e.target.value)}
               />
             </Grid>
-           
+            <Grid item xs={12} sm={6}>
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Cargo</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={role}
+                    label="Cargo"
+                    onChange={(e) => setRole(e.target.value)}
+                  >
+                    <MenuItem value={"Developer"}>Developer</MenuItem>
+                    <MenuItem value={"Admin"}>Admin</MenuItem>
+                    <MenuItem value={"Owner"}>Owner</MenuItem>
+                    <MenuItem value={"Member"}>Member</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </Grid>
           </Grid>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <Button variant="contained" color="inherit" sx={{ mt: 3, ml: 1 }} onClick={() => navigate(-1)}>Voltar</Button>
             <Button variant="contained" color="success" sx={{ mt: 3, ml: 1 }} onClick={handleSubmit}>
               Atualizar
             </Button>

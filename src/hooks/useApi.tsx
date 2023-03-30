@@ -16,7 +16,7 @@ export const useApi = () => ({
       });
       return data;
     } catch (error:any) {
-       return toast.error(error.request.data.message);
+       return toast.error(error.response.data.message)
     }
   },
   firstLogin: async (user: string, password: string, newPassword: string, passwordConfirm: string) => {

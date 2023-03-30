@@ -24,9 +24,11 @@ const Sidebar = () => {
           <C.AreaLink>
             <Link to="/" onClick={wrapperSidebar} >Home</Link>
           </C.AreaLink>
-          {/* <C.AreaLink>
-            <Link to="#" onClick={wrapperSidebar} >Fiscal</Link>{" "}
+         
+          <C.AreaLink>
+            <Link to="/users" onClick={wrapperSidebar} >Usuários</Link>{" "}
           </C.AreaLink>
+           {/*
           <C.AreaLink>
             {" "}
             <Link to="#" onClick={wrapperSidebar} >Financeiro</Link>

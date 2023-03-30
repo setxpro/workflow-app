@@ -9,4 +9,5 @@ export type User = {
   email: string;
   avatar: string;
   token: string;
+  isApproved: boolean;
 };

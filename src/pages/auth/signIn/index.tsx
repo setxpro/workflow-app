@@ -94,6 +94,7 @@ const Signin: React.FC = () => {
               <C.ContentButton>
                 <button onClick={handleSubmit}>Fazer Login</button>
                 <Link to="/forget-pass">Esqueci minha senha</Link>
+                <Link to="/register-user">Solicitação de cadastro</Link>
               </C.ContentButton>
             </C.ContentFormMiddle>
             <C.ContentFormBottom>

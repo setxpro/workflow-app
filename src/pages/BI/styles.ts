@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    
+     margin-top: 20px;
     .MuiButtonBase-root {
         color: ${props => props.theme.colors.text};
     }

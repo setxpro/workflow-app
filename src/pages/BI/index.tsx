@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as C from "./styles";
 import { BiProps } from "../../types/BiTypes";
 import axios from "axios";
@@ -10,6 +10,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import RegisterBi from "./RegisterBi";
+import { AuthContext } from "../../contexts/auth";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -45,9 +46,10 @@ function a11yProps(index: number) {
 }
 
 const BI = () => {
-
   const [bi, setBi] = useState<BiProps[]>([]);
   const [value, setValue] = useState(0);
+
+  const { user } = useContext(AuthContext);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -66,26 +68,51 @@ const BI = () => {
     <C.Container>
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-          >
-            <Tab label="Dashboars" {...a11yProps(0)} />
-            <Tab label="Registrar BI" {...a11yProps(1)} />
-            <Tab label="Editar BI" {...a11yProps(2)} />
-            <Tab label="Deletar" {...a11yProps(3)} />
-          </Tabs>
+          {user?.role === "Admin" && (
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              aria-label="basic tabs example"
+            >
+              <Tab label="Dashboars" {...a11yProps(0)} />
+              <Tab label="Registrar BI" {...a11yProps(1)} />
+              <Tab label="Editar BI" {...a11yProps(2)} />
+              <Tab label="Deletar" {...a11yProps(3)} />
+            </Tabs>
+          )}
+          {user?.role === "Developer" && (
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              aria-label="basic tabs example"
+            >
+              <Tab label="Dashboars" {...a11yProps(0)} />
+              <Tab label="Registrar BI" {...a11yProps(1)} />
+              <Tab label="Editar BI" {...a11yProps(2)} />
+              <Tab label="Deletar" {...a11yProps(3)} />
+            </Tabs>
+          )}
+          {user?.role === "Member" && (
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              aria-label="basic tabs example"
+            >
+              <Tab label="Dashboars" {...a11yProps(0)} />
+            </Tabs>
+          )}
         </Box>
         <TabPanel value={value} index={0}>
           <C.ContentCards>
             <CardBi data={bi} />
           </C.ContentCards>
         </TabPanel>
-        <TabPanel value={value} index={1}><RegisterBi setValue={setValue}/></TabPanel>
+        <TabPanel value={value} index={1}>
+          <RegisterBi setValue={setValue} />
+        </TabPanel>
         <TabPanel value={value} index={2}>
-        <C.ContentCards>
-            <EditCardBi data={bi}/>
+          <C.ContentCards>
+            <EditCardBi data={bi} />
           </C.ContentCards>
         </TabPanel>
         <TabPanel value={value} index={3}></TabPanel>

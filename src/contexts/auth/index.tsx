@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { AuthType } from "../../types/AuthType";
 import { ChildrenNode } from "../../types/ChildrenTypes";
 import { User } from "../../types/User";
@@ -15,45 +14,23 @@ export const AuthProvider = ({ children }: ChildrenNode) => {
   const [message, setMessage] = useState("");
   const [accessToken, setAccessToken] = useState("");
   const api = useApi();
-  const navigate = useNavigate();
 
 
   const signIn = async (user: string, password: string) => {
     setLoading(true);
-    try {
       const data = await api.signIn(user, password);
-      if (
-        data.message ===
-        "Você será levado para a página de redefinição de senha."
-      ) {
-        toast.warning(data.message);
-        setTimeout(() => {
-          navigate("/forget-pass");
-        }, 3000);
-      }
-
-      if(data.firstLogin) {
-        setTokenFsLogin(data.token);
-        toast.success(data.message);
-        navigate("/first-login")
-      }
-
       if (data.user) {
         setAccessToken(data.user.token)
+        toast.success(data.message)
         setTokenDB(data.user.token);
         setUser(data.user);
         setUserDB(data.user);
+        setLoading(false);
         return true;
       }
       setLoading(false);
       setMessage("");
       return false;
-    } catch (error: any) {
-      
-      // toast.error(error.response.data.message);
-      setLoading(false);
-      return false;
-    }
   };
 
   const logout = () => {
@@ -70,11 +47,6 @@ export const AuthProvider = ({ children }: ChildrenNode) => {
 
   const setTokenDB = (token: string) => {
     const accessToken = localStorage.setItem("access-token", JSON.stringify(token));
-    return accessToken;
-  }
-
-  const setTokenFsLogin = (token: string) => {
-    const accessToken = localStorage.setItem("token-first-login", JSON.stringify(token));
     return accessToken;
   }
 
