@@ -10,8 +10,14 @@ const Sidebar = () => {
   const { wrapperSidebar, openSidebar } = useSidebar();
 
   // user is logged
-  const { logout } = useContext(AuthContext);
-  
+  const { logout, user } = useContext(AuthContext);
+
+  // Cod Aprovadores
+  let userAprov = ["001512" , "000590"]
+
+  const findApprov = userAprov.includes(`${user?.codAprov}`)
+
+
   return (
     <React.Fragment>
       <C.Container openSidebar={openSidebar}>
@@ -22,28 +28,59 @@ const Sidebar = () => {
         </C.SidebarTopArea>
         <C.SidebarMiddleArea>
           <C.AreaLink>
-            <Link to="/" onClick={wrapperSidebar} >Home</Link>
+            <Link to="/" onClick={wrapperSidebar}>
+              Home
+            </Link>
           </C.AreaLink>
-         
-          <C.AreaLink>
-            <Link to="/users" onClick={wrapperSidebar} >Usuários</Link>{" "}
-          </C.AreaLink>
-           {/*
-          <C.AreaLink>
+          {user?.role !== "Member" && (
+            <C.AreaLink>
+              <Link to="/users" onClick={wrapperSidebar}>
+                Usuários
+              </Link>{" "}
+            </C.AreaLink>
+          )}
+          
+          {user?.codAprov === "001512" && (
+            <C.AreaLink>
             {" "}
-            <Link to="#" onClick={wrapperSidebar} >Financeiro</Link>
+            <Link to="/aprov-desp" onClick={wrapperSidebar}>
+              Fiscal
+            </Link>
+          </C.AreaLink>
+          )}
+        
+
+          {user?.codAprov === "000590" && (
+            <C.AreaLink>
+            {" "}
+            <Link to="/aprov-desp" onClick={wrapperSidebar}>
+              Financeiro
+            </Link>
+          </C.AreaLink>
+          )}
+
+          {!findApprov && (
+            <C.AreaLink>
+            {" "}
+            <Link to="/aprov-desp" onClick={wrapperSidebar}>
+              CC
+            </Link>
+          </C.AreaLink>
+          )}
+          <C.AreaLink>
+            <Link to="/bi" onClick={wrapperSidebar}>
+              BI
+            </Link>
           </C.AreaLink>
           <C.AreaLink>
-            <Link to="#" onClick={wrapperSidebar} >Centro de custo</Link>{" "}
+            <Link to="/dito" onClick={wrapperSidebar}>
+              Dito
+            </Link>
           </C.AreaLink>
           <C.AreaLink>
-            <Link to="/" onClick={wrapperSidebar} >Contas a Pagar</Link>
-          </C.AreaLink> */}
-          <C.AreaLink>
-            <Link to="/bi" onClick={wrapperSidebar} >BI</Link>
-          </C.AreaLink>
-          <C.AreaLink>
-            <Link to="/" onClick={wrapperSidebar} >Suporte</Link>
+            <Link to="/" onClick={wrapperSidebar}>
+              Suporte
+            </Link>
           </C.AreaLink>
         </C.SidebarMiddleArea>
         <C.SidebarBottomArea>

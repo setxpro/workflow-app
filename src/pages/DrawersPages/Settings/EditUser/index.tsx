@@ -58,7 +58,7 @@ export default function EditUser() {
         setMiddlename(data.user.middleName)
         setEmail(data.user.email)
         setPhone(data.user.phone)
-        setAssignments(data.user.name)
+        setAssignments(data.user.assignments)
     })()
 
   }, [user?._id])
@@ -114,7 +114,7 @@ export default function EditUser() {
               <TextField
                 id="assignment"
                 name="assignment"
-                label="Setor | Loja"
+                label="Atribuição"
                 fullWidth
                 variant="standard"
                 value={assignments}

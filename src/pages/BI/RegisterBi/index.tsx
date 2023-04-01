@@ -94,7 +94,7 @@ export default function RegisterBi({setValue}: Props) {
            
           </Grid>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-            <Button variant="contained" color="success" sx={{ mt: 3, ml: 1 }} onClick={handleSubmit}>
+            <Button id="light" variant="contained" color="success" sx={{ mt: 3, ml: 1 }} onClick={handleSubmit}>
               Registrar BI
             </Button>
           </Box>
@@ -119,7 +119,7 @@ export default function RegisterBi({setValue}: Props) {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Button variant="contained" color="secondary" sx={{ mt: 3, ml: 1 }} onClick={addMembers}>Add</Button>
+              <Button id="light" variant="contained" color="secondary" sx={{ mt: 3, ml: 1 }} onClick={addMembers}>Add</Button>
             </Grid>
             </Grid>
           <Grid container spacing={3}p={5}>

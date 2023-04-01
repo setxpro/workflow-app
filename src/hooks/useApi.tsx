@@ -3,6 +3,9 @@ import { toast } from "react-toastify";
 
 const uri = axios.create({
   baseURL: `${import.meta.env.VITE_APP_TALK}`,
+  headers: { 
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzcxNjAyMzgsImV4cCI6MTcwNTk2MDIzOH0.KMWOXSeliis7dE_sYgikXFAvoObOTglpqblsKrIcrdk`
+   }
 });
 
 export const useApi = () => ({
@@ -66,7 +69,7 @@ export const useApi = () => ({
   
   findAllTitles: async (id: string) => {
     try {
-      const { data } = await uri.get(`/find-all-titles/${id}`)
+      const { data } = await uri.get(`/workflow/find-all-titles/${id}`)
       return data;
     } catch (error) {
         console.log(error);

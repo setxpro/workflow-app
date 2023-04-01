@@ -16,6 +16,13 @@ export const Container = styled.div`
         color: ${props => props.theme.colors.text};
     }
 
+    #dark {
+        color: #333;
+    }
+    #light {
+        color: #FFF;
+    }
+
     .MuiInputBase-root {
         border-bottom: none;
     }

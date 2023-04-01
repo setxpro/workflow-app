@@ -61,7 +61,7 @@ export default function UpdateUser() {
         setMiddlename(data.user.middleName)
         setEmail(data.user.email)
         setPhone(data.user.phone)
-        setAssignments(data.user.name)
+        setAssignments(data.user.assignments)
         setRole(data.user.role)
     })()
 
@@ -118,7 +118,7 @@ export default function UpdateUser() {
               <TextField
                 id="assignment"
                 name="assignment"
-                label="Setor | Loja"
+                label="Atribuição"
                 fullWidth
                 variant="standard"
                 value={assignments}

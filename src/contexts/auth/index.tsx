@@ -21,7 +21,6 @@ export const AuthProvider = ({ children }: ChildrenNode) => {
       const data = await api.signIn(user, password);
       if (data.user) {
         setAccessToken(data.user.token)
-        toast.success(data.message)
         setTokenDB(data.user.token);
         setUser(data.user);
         setUserDB(data.user);

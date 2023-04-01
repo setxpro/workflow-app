@@ -51,7 +51,7 @@ const Header = () => {
           <C.AvatarNameArea>
             <C.NameArea>
               <h2>{user?.name} {user?.middleName} </h2>
-              <h3>{user?.role}</h3>
+              <h3>{user?.assignments}</h3>
             </C.NameArea>
             <C.AvatarImage onClick={wrapperSettings}>
               <div className="image-area">

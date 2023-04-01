@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     h4 {
+        transition: all 0.5s ease;
         color: ${props => props.theme.colors.text};
     }
     h6 {
@@ -9,6 +10,7 @@ export const Container = styled.div`
     }
 
     #login {
+        transition: all 0.5s ease;
         color: ${props => props.theme.colors.text};
     }
 `;
@@ -42,6 +44,7 @@ export const Table = styled.table`
 
                 text-align: center;
                 padding: 0.5em;
+                transition: all 0.5s ease;
                 color: ${props => props.theme.colors.text};
                 font-size: 1.3em;
             }

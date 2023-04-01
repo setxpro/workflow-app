@@ -68,6 +68,15 @@ const EditBi: React.FC = () => {
               <Typography variant="h4" gutterBottom>
                 {item?.title}
               </Typography>
+              <Button
+              id="dark"
+                variant="contained"
+                color="inherit"
+                sx={{ mt: 1, ml: 1 }}
+                onClick={() => navigate(-1)}
+              >
+                Voltar
+              </Button>
             </Grid>
 
             <Grid item xs={6} sm={6}>
@@ -84,6 +93,7 @@ const EditBi: React.FC = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <Button
+              id="light"
                 variant="contained"
                 color="secondary"
                 sx={{ mt: 1, ml: 1 }}
@@ -91,7 +101,9 @@ const EditBi: React.FC = () => {
               >
                 Add
               </Button>
+              
               <Button
+              id="light"
                 variant="contained"
                 color="success"
                 sx={{ mt: 1, ml: 1 }}

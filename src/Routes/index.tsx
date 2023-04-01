@@ -12,6 +12,8 @@ import PageNotFound from "../pages/PageNotFound";
 import RootPageUsers from "../pages/RootPageUsers";
 import UpdateUser from "../pages/Users/Update";
 import Register from "../pages/Users/Register";
+import Dito from "../pages/Dito";
+import TableWorkflow from "../pages/workflow/Table";
 
 const LockRouter = ({ children }: ChildrenJSX) => {
   const auth = useContext(AuthContext);
@@ -52,6 +54,16 @@ const AppRoutes: React.FC = () => {
         }
       />
       <Route
+        path="/dito"
+        element={
+          <LockRouter>
+            <Layout>
+              <Dito />
+            </Layout>
+          </LockRouter>
+        }
+      />
+      <Route
         path="/users"
         element={
           <LockRouter>
@@ -77,6 +89,16 @@ const AppRoutes: React.FC = () => {
           <LockRouter>
             <Layout>
               <EditBi />
+            </Layout>
+          </LockRouter>
+        }
+      />
+      <Route
+        path="/aprov-desp"
+        element={
+          <LockRouter>
+            <Layout>
+              <TableWorkflow />
             </Layout>
           </LockRouter>
         }
