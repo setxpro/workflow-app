@@ -96,10 +96,13 @@ export const AreaLink = styled.div`
 
   display: flex;
   align-items: center;
-  padding: 0 10px 0 0;
+  padding: 0 0px 0 0;
   transition: 0.5s ease;
 
   &:hover {
+  }
+  
+  .active {
     background: #7777;
   }
 
@@ -113,6 +116,7 @@ export const AreaLink = styled.div`
 
     display: flex;
     gap: 1rem;
+
     .hidden {
       
     }

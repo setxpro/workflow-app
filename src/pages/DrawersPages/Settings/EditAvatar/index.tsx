@@ -25,7 +25,7 @@ const EditAvatar: React.FC = () => {
     e.preventDefault();
     if (image) {
       readB64Img(image, (base64) => setAvatarInLocalStorage(`${base64}`))
-      return window.location.reload();
+      // return window.location.reload();
     }
   }
 
