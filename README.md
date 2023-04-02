@@ -1,14 +1,22 @@
 ---
 title: Workflow
-description: Example Vite app that is configured to just work out of the box.
+description: Application created in order to control the company's workflow
 tags:
-  - vite
+  - React
+  - Vite
+  - Typescript
 ---
 
 # Vite
 This example utilises vite for static site generation
 
-[![Deploy]](https://railway.app/new/template/B0Cef9?referralCode=OH27A5)
+[![Deploy]](https://workflow-app-production.up.railway.app/)
+
+## Participants
+
+[<img src="https://avatars.githubusercontent.com/u/69186374?v=4" width="75px;"/>](https://github.com/setxpro)
+
+[Patrick Anjos](https://github.com/setxpro)
 
 ## ✨ Features
 
@@ -23,4 +31,5 @@ This example utilises vite for static site generation
 
 ## 📝 Notes
 
-The project is directly derived from the standard creation with some extra configuration to make sure it is quick and easy to get started on hosting your next site with railway. 
+The project is directly derived from the standard creation with some extra configuration to make sure it is quick and easy.
+

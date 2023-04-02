@@ -12,7 +12,7 @@ export const Container = styled.div<{ openSidebar: boolean }>`
   z-index: 9999;
   overflow: hidden;
   background: ${(props) => props.theme.colors.sidebar};
-  width: ${(props) => (props.openSidebar ? "15%" : "0px")};
+  width: ${(props) => (props.openSidebar ? "19%" : "0px")};
   color: ${(props) => props.theme.colors.text};
 
   @media (max-width: 450px) {
