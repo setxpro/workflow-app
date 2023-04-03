@@ -9,5 +9,6 @@ export const light = {
     modalH3: "#444",
     tableEven: "#3333",
     biHover: "#DDDD",
+    thTable: "#333"
   },
 };

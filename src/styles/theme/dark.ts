@@ -9,5 +9,6 @@ export const dark = {
     modalH3: "#aaaa",
     tableEven: "#5555",
     biHover: "#333",
+    thTable: "#EEE",
   },
 };

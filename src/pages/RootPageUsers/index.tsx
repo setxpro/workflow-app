@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import { AuthContext } from "../../contexts/auth";
 import Users from "../Users";
 import CreateUser from "../Users/CreateUser";
+import TabUsers from "../Users/TabUsers";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -73,12 +74,14 @@ const RootPageUsers = () => {
             >
               <Tab label="Usuários" {...a11yProps(0)} />
               <Tab label="Registrar usuário" {...a11yProps(1)} />
+              <Tab label="Users2" {...a11yProps(2)} />
             </Tabs>
           )}
           {user?.role === "Member" && null}
         </Box>
         <TabPanel value={value} index={0}><Users/></TabPanel>
         <TabPanel value={value} index={1}><CreateUser/></TabPanel>
+        <TabPanel value={value} index={2}><TabUsers/></TabPanel>
       </Box>
     </C.Container>
   );

@@ -12,6 +12,7 @@ declare module "styled-components" {
       modalH3: string;
       tableEven: string;
       biHover: string;
+      thTable: string;
     };
   }
 }
