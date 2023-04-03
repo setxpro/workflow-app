@@ -10,7 +10,7 @@ tags:
 # Vite
 This example utilises vite for static site generation
 
-[![Deploy]](https://workflow-app-production.up.railway.app/)
+[[Access Deploy]](https://workflow-app-production.up.railway.app/)
 
 ## Participants
 
