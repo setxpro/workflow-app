@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-import { toast } from "react-toastify";
 import { AuthType } from "../../types/AuthType";
 import { ChildrenNode } from "../../types/ChildrenTypes";
 import { User } from "../../types/User";
@@ -76,10 +75,10 @@ export const AuthProvider = ({ children }: ChildrenNode) => {
     }
 
     // In 2 hours I gonna tear down user inactive
-    setInterval(() => {
-      setUser(null);
-      setUserDB("")
-    }, 3600000 * 2)
+    // setInterval(() => {
+    //   setUser(null);
+    //   setUserDB("")
+    // }, 3600000 * 2)
 
   }, [])
 

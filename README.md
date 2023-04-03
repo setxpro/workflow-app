@@ -32,4 +32,3 @@ This example utilises vite for static site generation
 ## 📝 Notes
 
 The project is directly derived from the standard creation with some extra configuration to make sure it is quick and easy.
-
