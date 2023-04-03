@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start" : "npm run prod",
-    "prod": "npm run build && npx http-server ./dist",
+    "start": "npx http-server ./dist",
     "dev": "vite",
-    "build": "vite build",
+    "build": "rimraf ./dist && tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -26,6 +25,7 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
     "react-toastify": "^9.1.2",
+    "rimraf": "^4.4.1",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
