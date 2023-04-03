@@ -36,15 +36,9 @@ The project is directly derived from the standard creation with some extra confi
 
 # FLUXO 
 ## Entrada de notas pelo Compras|Fiscal
-<!-- ```
-  title: Entrada de notas pelo Compras|Fiscal
-  obs: Pergunta se deseja seguir para o workflow ou não
-  sim: Vai para o Workflow
-  não: Gera um relatório que vai para a coordenação informando que um compromisso foi lançado
-``` -->
 
 | title        | obs | sim       | Não |
-| --------------| ------ | -------------- |
+| --------------| ------ | -------------- |-----|
 | Entrada de notas pelo Compras|Fiscal     | Pergunta se deseja seguir para o workflow ou não   | Gera um relatório que vai para a coordenação informando que um compromisso foi lançado    |
 
 ## Entrada de títuloa pelo Financeiro
@@ -53,22 +47,13 @@ The project is directly derived from the standard creation with some extra confi
 |-----|----|----|---|
 |Entrada de títuloa pelo Financeiro|Pergunta se deseja seguir para o workflow ou não|Vai para o Workflow|Gera um relatório que vai para a coordenação informando que um compromisso foi lançado|
 
-<!-- ```
-  title: Entrada de títuloa pelo Financeiro
-  obs: Pergunta se deseja seguir para o workflow ou não
-  sim: Vai para o Workflow
-  não: Gera um relatório que vai para a coordenação informando que um compromisso foi lançado
-``` -->
 
 ## Alçadas de Aprovação
-```
-  fiscal: Aprova todos os Compromissos: Verifica coerência de naturezas, centro de custos e dados de atributos
-  Financeiro: Aprova todos os Compromissos: Verifica e acompanha o fluxo de caixas da empresa
-  Centro de Custos: Cada gestor aprova os seis compromissos entre: 0,01 até 20K
-  CEO: Aprova a partir de 20.000,01
-  Compromissos: Vão para o banco com antecedência de até 01 dia. Ex.: Hoje seguem para o banco compromissos de hoje de manhã (03 e 04 de abril)
-  CNAB: Os Títulos seguem como arquivo CNAB para o banco
-```
+
+|Fiscal|Financeiro|Centro de Custos|CEO|Compromissos|CNAB|
+|------|----------|----------------|---|------------|----|
+|Aprova todos os Compromissos: Verifica coerência de naturezas, centro de custos e dados de atributos|Aprova todos os Compromissos: Verifica e acompanha o fluxo de caixas da empresa|Cada gestor aprova os seis compromissos entre: 0,01 até 20K|Aprova a partir de 20.000,01|Vão para o banco com antecedência de até 01 dia. Ex.: Hoje seguem para o banco compromissos de hoje de manhã (03 e 04 de abril)|Os Títulos seguem como arquivo CNAB para o banco
+
 
 ```
   - Os arquivos são gravados numa pasta do servidor
