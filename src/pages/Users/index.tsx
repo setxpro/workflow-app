@@ -157,7 +157,8 @@ const Users: React.FC = () => {
           {filterRows.map((row:any, index: number) => {
             if(row.role !== "Developer")
             return (
-              <StyledTableRow key={index}>
+              <StyledTableRow key={index}
+              >
                 <StyledTableCell align="center" component="th" scope="row">
                   <C.ImageAvatar isOnline={row.online}>
                     <img  src={row.avatar} alt="avatar" />

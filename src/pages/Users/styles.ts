@@ -22,6 +22,12 @@ export const Container = styled.div`
 
         }
 
+        td {
+            transition: .5s ease;
+            color: ${props => props.theme.colors.text};
+            font-size: 1.2em;
+        }
+
         :nth-child(even) {
             transition: .5s ease;
             background: ${props => props.theme.colors.header};
