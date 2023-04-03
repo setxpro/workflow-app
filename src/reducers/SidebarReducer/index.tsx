@@ -14,7 +14,7 @@ const reducer = (state: any, action: any) => {
         Support: false,
         CC: false
       };
-    case "Usuários":
+    case "Users":
       return {
         ...state,
         Home: false,
