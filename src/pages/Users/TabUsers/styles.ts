@@ -22,11 +22,13 @@ export const Container = styled.div`
           top: 0;
           z-index: 99;
 
-          &:nth-child(1),
-          &:nth-child(2),
-          &:nth-child(4),
-          &:nth-child(5) {
-            display: none;
+          @media (max-width: 600px) {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(4),
+            &:nth-child(5) {
+              display: none;
+            }
           }
         }
       }
