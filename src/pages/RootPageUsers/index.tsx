@@ -6,7 +6,6 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { AuthContext } from "../../contexts/auth";
-import Users from "../Users";
 import CreateUser from "../Users/CreateUser";
 import TabUsers from "../Users/TabUsers";
 
@@ -79,7 +78,7 @@ const RootPageUsers = () => {
           {user?.role === "Member" && null}
         </Box>
         <TabPanel value={value} index={0}><TabUsers/></TabPanel>
-        <TabPanel value={value} index={1}><CreateUser/></TabPanel>
+        <TabPanel value={value} index={1}><CreateUser setValue={setValue}/></TabPanel>
       </Box>
     </C.Container>
   );

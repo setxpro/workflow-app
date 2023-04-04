@@ -15,7 +15,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-export default function CreateUser() {
+interface Props {
+  setValue: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export default function CreateUser({setValue}:Props) {
   const [name, setName] = React.useState("");
   const [middleName, setMiddlename] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -158,7 +162,7 @@ export default function CreateUser() {
               Cadastrar
             </Button>
           </Box>
-          </> : <Button variant="contained" color="info" sx={{ mt: 3, ml: 1 }} onClick={() => setLoad(true)}>Cadastrar novo usuário</Button>}
+          </> : <Button variant="contained" color="info" sx={{ mt: 3, ml: 1 }} onClick={() => setValue(0)}>Cadastrar novo usuário</Button>}
         </React.Fragment>
       </Paper>
     </Container>

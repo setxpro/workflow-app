@@ -9,6 +9,7 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useNavigate } from "react-router-dom";
+import LoadingTable from "../../../components/Loadings/LoadingTable";
 
 interface Props {
   userId: string;
@@ -17,12 +18,15 @@ interface Props {
 const TabUsers: React.FC = () => {
   const [users, setUsers] = React.useState<User[]>([]);
   const [search, setSearch] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+  
   const { user } = React.useContext(AuthContext);
 
   const navigate = useNavigate();
 
   React.useEffect(() => {
     (async () => {
+      setLoading(true)
       const { data } = await axios.get(
         `${import.meta.env.VITE_APP_TALK}/user`,
         {
@@ -30,6 +34,7 @@ const TabUsers: React.FC = () => {
         }
       );
       setUsers(data.users);
+      setLoading(false)
     })();
   }, []);
 
@@ -56,7 +61,9 @@ const TabUsers: React.FC = () => {
 
   return (
     <C.Container>
-      <C.ContentTitle>
+      {loading ? <LoadingTable/> : (
+      <React.Fragment>
+        <C.ContentTitle>
         <C.FieldInput
           type="search"
           placeholder="Buscar usuário..."
@@ -139,6 +146,8 @@ const TabUsers: React.FC = () => {
           </tbody>
         </table>
       </C.ContainerTable>
+      </React.Fragment>
+      )}
     </C.Container>
   );
 };

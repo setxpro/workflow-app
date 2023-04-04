@@ -24,7 +24,7 @@ export const TableContainer = styled.div`
     width: 4px;
   }
   ::-webkit-scrollbar-track {
-    background: #5555;
+    background: #1111;
   }
   ::-webkit-scrollbar-thumb {
     background: #555;
