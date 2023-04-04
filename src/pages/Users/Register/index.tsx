@@ -160,7 +160,7 @@ export default function Register() {
                 >
                   Fazer Login
                 </Button>
-                {/* {activeStep !== 0 && (
+                {activeStep !== 0 && (
                   <Button
                     variant="contained"
                     color="inherit"
@@ -169,17 +169,8 @@ export default function Register() {
                   >
                     Back
                   </Button>
-                )} */}
-                <Button
-                  variant="contained"
-                  color="success"
-                  onClick={handleNext}
-                  sx={{ mt: 3, ml: 1 }}
-                >
-                  {activeStep === steps.length - 1
-                    ? "Enviar solicitação"
-                    : "Next"}
-                </Button>
+                )}
+               
               </Box>
             </React.Fragment>
           )}

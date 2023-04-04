@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 
 import { toast } from "react-toastify";
 import axios from "axios";
+import { ContainerArea } from "./styles";
 
 interface Props {
   setValue: React.Dispatch<React.SetStateAction<number>>;
@@ -56,11 +57,25 @@ export default function RegisterBi({setValue}: Props) {
     setMember("")
   }
 
+  const handleInputKeyUp = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent> | any
+  ) => {
+    if (e.keyCode === 13) {
+      addMembers()
+    }
+  };
+
+  function removeItemsSelected(index: string) {
+    const remove = members.filter((mm) => mm !== index);
+    setMembers(remove);
+  }
+
   return (
-    <Container component="main"  sx={{ mb: 4, display: 'flex', gap: '1rem'}}>
-      <Paper
+    <Container component="main"  sx={{ mb: 4}}>
+     <ContainerArea>
+     <Paper
         variant="outlined"
-        sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }, width: '50%' }}
+        sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }, flex: 1 }}
       >
         <React.Fragment>
           <Typography variant="h6" gutterBottom>
@@ -75,6 +90,7 @@ export default function RegisterBi({setValue}: Props) {
                 label="Título"
                 fullWidth
                 variant="standard"
+                onKeyUp={handleInputKeyUp}
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
@@ -86,6 +102,7 @@ export default function RegisterBi({setValue}: Props) {
                 name="link"
                 label="URL de acesso"
                 fullWidth
+                onKeyUp={handleInputKeyUp}
                 variant="standard"
                 value={link}
                 onChange={(e) => setLink(e.target.value)}
@@ -100,8 +117,9 @@ export default function RegisterBi({setValue}: Props) {
           </Box>
         </React.Fragment>
       </Paper>
+
       <Paper variant="outlined"
-        sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }, width: '50%'  }}>
+        sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }, flex: 1  }}>
          <Typography variant="h6" gutterBottom>
             Usuários
           </Typography>
@@ -124,16 +142,17 @@ export default function RegisterBi({setValue}: Props) {
             </Grid>
           <Grid container spacing={3}p={5}>
           {members.map((user) => (
-            <Grid sm={12}>
+            <Grid sm={12} sx={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
               <h3 style={{
                 color: '#999',
                 fontWeight: '400',
                 fontSize: '1em',
-              }}>{user}</h3>
+              }}>{user}</h3><Button variant="contained" color="error" onClick={() => removeItemsSelected(user)}>Remover</Button>
             </Grid>
           ))}
           </Grid>
       </Paper>
+     </ContainerArea>
     </Container>
   );
 }

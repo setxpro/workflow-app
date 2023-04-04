@@ -4,7 +4,7 @@ export const Container = styled.a`
     display: grid;
     place-items: center;
     padding:  40px 5px;
-    box-shadow: 1px 2px 5px #555;
+    box-shadow: 1px 2px 3px #555;
     border-radius: 8px; 
 
     transition: all 0.5s ease;
@@ -19,12 +19,13 @@ export const Container = styled.a`
         @media (max-width: 500px) {
             font-size: 1.8em;
         }
-
+        transition: all .5s ease;
         color: ${props => props.theme.colors.text};
 
     }
 
     &:hover {
+        transition: all .5s ease;
         background: ${props => props.theme.colors.biHover};
     }
 `;

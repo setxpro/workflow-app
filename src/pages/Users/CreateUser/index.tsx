@@ -145,6 +145,15 @@ export default function CreateUser() {
             </Grid>
           </Grid>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <Button
+                    variant="contained"
+                    color="inherit"
+                    onClick={() => navigate(-1)}
+                    sx={{ mt: 3, ml: 1}}
+                    style={{color: "#333"}}
+                  >
+                    Voltar
+                  </Button>
             <Button id="light" variant="contained" color="success" sx={{ mt: 3, ml: 1, color: "#FFF" }} onClick={handleSubmit}>
               Cadastrar
             </Button>

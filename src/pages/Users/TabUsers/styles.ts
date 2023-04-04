@@ -18,9 +18,16 @@ export const Container = styled.div`
           color: ${(props) =>
             props.theme.title === "light" ? "#EEE" : "#333"};
           padding: 0.3em;
-            position: sticky;
-            top: 0;
-            z-index: 99;
+          position: sticky;
+          top: 0;
+          z-index: 99;
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: none;
+          }
         }
       }
     }
@@ -37,27 +44,25 @@ export const Container = styled.div`
         }
 
         .member {
-            font-weight: bold;
-            font-size: 1em;
-            color: orange;
-
-          }
-          .admin {
-            font-weight: bold;
-            font-size: 1em;
-            color: #444DDD;
-          }
-          .dev {
-            font-weight: bold;
-            font-size: 1em;
-            color: CYAN;
-
-          }
-          .owner {
-            font-weight: bold;
-            font-size: 1em;
-            color: rgba(100, 200, 100);
-          }
+          font-weight: bold;
+          font-size: 1em;
+          color: orange;
+        }
+        .admin {
+          font-weight: bold;
+          font-size: 1em;
+          color: #444ddd;
+        }
+        .dev {
+          font-weight: bold;
+          font-size: 1em;
+          color: CYAN;
+        }
+        .owner {
+          font-weight: bold;
+          font-size: 1em;
+          color: rgba(100, 200, 100);
+        }
 
         td {
           transition: 0.5s ease;
@@ -86,6 +91,15 @@ export const Container = styled.div`
 
           #btn {
             color: #eee;
+          }
+
+          @media (max-width: 600px) {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(4),
+            &:nth-child(5) {
+              display: none;
+            }
           }
         }
       }
@@ -127,10 +141,16 @@ export const FieldInput = styled.input`
 export const ContainerTable = styled.div`
   height: calc(100vh - 250px);
   overflow-y: scroll;
-  
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track {background: #5555;}
-  ::-webkit-scrollbar-thumb { background: #555; }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #5555;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+  }
 
   .approved {
     color: ${(props) => (props.theme.title === "light" ? "green" : "#28C16D")};

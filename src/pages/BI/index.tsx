@@ -77,7 +77,6 @@ const BI = () => {
               <Tab label="Dashboars" {...a11yProps(0)} />
               <Tab label="Registrar BI" {...a11yProps(1)} />
               <Tab label="Editar BI" {...a11yProps(2)} />
-              <Tab label="Deletar" {...a11yProps(3)} />
             </Tabs>
           )}
           {user?.role === "Developer" && (
@@ -89,7 +88,6 @@ const BI = () => {
               <Tab label="Dashboars" {...a11yProps(0)} />
               <Tab label="Registrar BI" {...a11yProps(1)} />
               <Tab label="Editar BI" {...a11yProps(2)} />
-              <Tab label="Deletar" {...a11yProps(3)} />
             </Tabs>
           )}
           {user?.role === "Member" && (
@@ -115,7 +113,6 @@ const BI = () => {
             <EditCardBi data={bi} />
           </C.ContentCards>
         </TabPanel>
-        <TabPanel value={value} index={3}></TabPanel>
       </Box>
     </C.Container>
   );

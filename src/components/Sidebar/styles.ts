@@ -15,7 +15,7 @@ export const Container = styled.div<{ openSidebar: boolean }>`
   width: ${(props) => (props.openSidebar ? "19%" : "0px")};
   color: ${(props) => props.theme.colors.text};
 
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
     width: ${(props) => (props.openSidebar ? "50%" : "0px")};
   }
   @media (min-width: 834px) AND (max-width:  1024px) {

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as C from "./styles";
@@ -18,6 +18,7 @@ const Signin: React.FC = () => {
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
+   
 
     let password = pass;
 
@@ -41,7 +42,18 @@ const Signin: React.FC = () => {
 
       navigate("/");
     }
+    
   };
+
+
+  const handleInputKeyUp = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent> | any
+  ) => {
+    if (e.keyCode === 13) {
+      handleSubmit(e);
+    }
+  };
+
 
   return (
     <C.Container>
@@ -70,6 +82,7 @@ const Signin: React.FC = () => {
                     name="login"
                     placeholder="Usuário"
                     value={user}
+                    onKeyUp={handleInputKeyUp}
                     onChange={(e) => [
                       setUser(e.target.value),
                       setErrorUser(false),
@@ -83,6 +96,7 @@ const Signin: React.FC = () => {
                     type="password"
                     name="senha"
                     placeholder="Senha"
+                    onKeyUp={handleInputKeyUp}
                     value={pass}
                     onChange={(e) => [
                       setPass(e.target.value),
