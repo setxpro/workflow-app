@@ -6,7 +6,6 @@ tags:
   - Vite
   - Typescript
 ---
-
 # Vite
 This example utilises vite for static site generation
 
@@ -17,7 +16,6 @@ This example utilises vite for static site generation
 [<img src="https://avatars.githubusercontent.com/u/69186374?v=4" width="75px;"/>](https://github.com/setxpro)
 
 [Patrick Anjos](https://github.com/setxpro)
-
 ## ✨ Features
 
 - Vite
@@ -32,8 +30,6 @@ This example utilises vite for static site generation
 ## 📝 Notes
 
 The project is directly derived from the standard creation with some extra configuration to make sure it is quick and easy.
-
-
 # FLUXO 
 ## Entrada de notas pelo Compras|Fiscal
 
@@ -47,13 +43,11 @@ The project is directly derived from the standard creation with some extra confi
 |-----|----|----|---|
 |Entrada de títuloa pelo Financeiro|Pergunta se deseja seguir para o workflow ou não|Vai para o Workflow|Gera um relatório que vai para a coordenação informando que um compromisso foi lançado|
 
-
 ## Alçadas de Aprovação
 
 |Fiscal|Financeiro|Centro de Custos|CEO|Compromissos|CNAB|
 |------|----------|----------------|---|------------|----|
 |Aprova todos os Compromissos: Verifica coerência de naturezas, centro de custos e dados de atributos|Aprova todos os Compromissos: Verifica e acompanha o fluxo de caixas da empresa|Cada gestor aprova os seis compromissos entre: 0,01 até 20K|Aprova a partir de 20.000,01|Vão para o banco com antecedência de até 01 dia. Ex.: Hoje seguem para o banco compromissos de hoje de manhã (03 e 04 de abril)|Os Títulos seguem como arquivo CNAB para o banco
-
 
 ```
   - Os arquivos são gravados numa pasta do servidor
@@ -61,5 +55,4 @@ The project is directly derived from the standard creation with some extra confi
   - Os arquivos de retorno são processados e dado baixa automatica em cada título do arquivo
   - No arquivo de retorno sempre deve vir a linha "segmento Z" (contém Autenticação Eletrõnica de Pgto)
   - Quando o título é baixado, gera um relatório informando que o título foi baixado.
-
 ```
