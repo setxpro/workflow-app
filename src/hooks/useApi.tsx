@@ -31,8 +31,8 @@ export const useApi = () => ({
         passwordConfirm
       });
       return data;
-    } catch (error) {
-        console.log(error)
+    } catch (error:any) {
+      return toast.error(error.response.data.message)
     }
   },
   forgetPwd: async (user: string, phonenumber: string) => {
@@ -42,8 +42,8 @@ export const useApi = () => ({
         phonenumber,
       });
       return data;
-    } catch (error) {
-        console.log(error)
+    } catch (error:any) {
+      return toast.error(error.response.data.message)
     }
   },
   updatePws: async (user: string, passwordEmail: string, newPassword: string, passwordConfirm: string) => {
@@ -56,14 +56,22 @@ export const useApi = () => ({
       });
       return data;
     } catch (error: any) {
-        // toast.error(error.response.data.message)
-        console.log(error)
+      return toast.error(error.response.data.message)
+    }
+  },
+
+  findOneUser: async (id: string) => {
+    try {
+      const { data } = await uri.get(`/user/find-one/${id}`)
+      return data;
+    } catch (error:any) {
+      return toast.error(error.response.data.message)
     }
   },
 
   // Find user
   findOneAll: async (id: string) => {},
-  findOneUser: async () => {},
+  
 
   // Find Titles and response 
   
@@ -71,8 +79,8 @@ export const useApi = () => ({
     try {
       const { data } = await uri.get(`/workflow/find-all-titles/${id}`)
       return data;
-    } catch (error) {
-        console.log(error);
+    } catch (error:any) {
+      return toast.error(error.response.data.message)
     }
   }
 

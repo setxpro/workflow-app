@@ -47,6 +47,13 @@ export const TableContainer = styled.div`
           top: 0;
           z-index: 9;
           padding: 0.3rem;
+
+          @media (max-width: 600px) {
+              &:nth-child(1),
+              &:nth-child(4) {
+                display: none;
+              }
+          }
         }
       }
     }
@@ -65,6 +72,13 @@ export const TableContainer = styled.div`
             font-weight: 400;
             font-size: 1.2em;
           }
+
+          @media (max-width: 600px) {
+              &:nth-child(1),
+              &:nth-child(4) {
+                display: none;
+              }
+          }
         }
       }
     }
@@ -74,8 +88,21 @@ export const ContentTitle = styled.div`
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
+  
+  @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  .right-side {
+
+    /* @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    } */
+
+  }
 
   h1 {
     color: ${(props) => props.theme.colors.text};
+    font-size: 1.5em;
   }
 `;

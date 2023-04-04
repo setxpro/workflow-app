@@ -30,16 +30,16 @@ const ApprovedExpense: React.FC<Props> = ({ data }) => {
       <C.ContentTitle>
           <h1>{company}</h1>
           <div className="right-side">
-          <select
-            value={company}
-            onChange={e => setCompany(e.target.value)}
-          >
-            {dropOptions.map((adf, index) => (
-              <option value={adf} key={index}>{adf}</option>            
-            ))}
-                  
-          </select>
-          <Button id="light" variant="contained" color="info">Enviar Selecionados</Button>
+            <select
+              value={company}
+              onChange={e => setCompany(e.target.value)}
+            >
+              {dropOptions.map((adf, index) => (
+                <option value={adf} key={index}>{adf}</option>            
+              ))}
+                    
+            </select>
+            <Button id="light" variant="contained" color="info">Enviar Selecionados</Button>
           </div>
       </C.ContentTitle>
       <C.TableContainer>
